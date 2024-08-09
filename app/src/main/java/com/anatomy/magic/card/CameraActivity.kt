@@ -51,11 +51,6 @@ class CameraActivity : AppCompatActivity() {
         cameraProvider.bindToLifecycle(this, cameraSelector, preview)
     }
 
-    private fun checkPermission(): Boolean {
-        val cameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-        return cameraPermission == PackageManager.PERMISSION_GRANTED
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         cameraExecutor.shutdown()
